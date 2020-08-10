@@ -13,7 +13,7 @@ $pdf->SetFont("Courier", "B", 20);
 $pdf->AddPage();
 $pdf->SetXY(0, 0);
 $pdf->Cell(215, 20, "Parcial", 0, 2, "C");
-$pdf->Cell(215, 15, "Reporte Productos", 0, 1, "C");
+$pdf->Cell(215, 15, "Reporte de Notas de Estudiante", 0, 1, "C");
 
 
 
