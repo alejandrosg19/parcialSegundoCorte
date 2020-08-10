@@ -58,9 +58,20 @@ class Nota{
         return $this -> conexion -> extraer();
     }
 
-    public function listar(){
+    public function listar1(){
         $this -> conexion -> abrir();
-        $this -> conexion -> ejecutar($this -> NotaDAO -> listar());
+        $this -> conexion -> ejecutar($this -> NotaDAO -> listar1());
+        $arrayres = array();
+        while(($resultado = $this -> conexion -> extraer()) != null){
+            array_push($arrayres,$resultado);
+        }
+        $this -> conexion -> cerrar();
+        return $arrayres;
+    }
+
+    public function listar2(){
+        $this -> conexion -> abrir();
+        $this -> conexion -> ejecutar($this -> NotaDAO -> listar2());
         $arrayres = array();
         while(($resultado = $this -> conexion -> extraer()) != null){
             array_push($arrayres,$resultado);

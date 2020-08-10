@@ -49,6 +49,7 @@ $valores = $Estudiante->consultarPaginacion($cantidad, $pagina);
                                 echo "<td>" . $res->getNombre() . "</td>";
                                 echo "<td>" . $res->getApellido() . "</td>";
                                 echo "<td> <a href='#' class='detalle' data-idestudiante='" . $res->getIdEstudiante() . "' data-toggle='modal' data-target='#exampleModal'><span class='fas fa-info-circle' data-toggle=tooltip ' data-placement='top' title='Asignar Nota'></span> </a>";
+                                echo " <a href='reportePDF1.php?idEstudiante=".$res->getIdEstudiante()."' target='_blank'><span class='fas fa-info-circle' data-toggle=tooltip ' data-placement='top' title='PDF'></span>";
                                 echo "</tr>";
                                 $i++;
                             }

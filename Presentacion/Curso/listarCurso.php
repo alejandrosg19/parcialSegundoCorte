@@ -49,6 +49,7 @@ $valores = $Curso->consultarPaginacion($cantidad, $pagina);
                                 echo "<td>" . $res->getNombre() . "</td>";
                                 echo "<td>" . $res->getCreditos() . "</td>";
                                 echo "<td> <a href='#' class='detalle' data-idcurso='" . $res->getIdCurso() . "' data-toggle='modal' data-target='#exampleModal'><span class='fas fa-info-circle' data-toggle=tooltip ' data-placement='top' title='Asignar Nota'></span> </a>";
+                                echo " <a href='reportePDF2.php?idCurso=".$res->getIdCurso()."' target='_blank'><span class='fas fa-info-circle' data-toggle=tooltip ' data-placement='top' title='PDF'></span>";
                                 echo "</tr>";
                                 $i++;
                             }

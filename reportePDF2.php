@@ -2,6 +2,14 @@
 require "fpdf/fpdf.php";
 require "Logica/Nota.php";
 
+$idCurso = $_GET["idCurso"];
+$nota = new Nota("","",$idCurso);
+
+
+$data = $nota->listar2();
+
+
+
 $pdf = new FPDF("P", "mm", "Letter");
 $pdf->SetFont("Courier", "B", 20);
 $pdf->AddPage();
@@ -9,8 +17,6 @@ $pdf->SetXY(0, 0);
 $pdf->Cell(215, 20, "Parcial", 0, 2, "C");
 $pdf->Cell(215, 15, "Reporte Productos", 0, 1, "C");
 
-$nota = new Nota();
-$data = $nota->listar();
 
 $header = array('Estudiante', 'Curso', 'Nota');
 

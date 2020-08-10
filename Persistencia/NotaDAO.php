@@ -34,12 +34,23 @@ class NotaDAO
         return "select count(idNota) from estudianteCurso";
     }
 
-    public function listar()
+    public function listar1()
     {
         return "
                 select estudiante.nombre , curso.nombre, estudiantecurso.nota
                 from estudiantecurso
                 INNER JOIN estudiante on FK_idEstudiante = idEstudiante
-                INNER JOIN curso on FK_idCurso = idCurso";
+                INNER JOIN curso on FK_idCurso = idCurso
+                WHERE estudiante.idEstudiante = '".$this -> idEstudiante."'";
+    }
+
+    public function listar2()
+    {
+        return "
+                select estudiante.nombre , curso.nombre, estudiantecurso.nota
+                from estudiantecurso
+                INNER JOIN estudiante on FK_idEstudiante = idEstudiante
+                INNER JOIN curso on FK_idCurso = idCurso
+                WHERE curso.idCurso = '".$this -> idCurso."'";
     }
 }
